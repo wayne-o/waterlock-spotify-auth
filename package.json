@@ -1,5 +1,5 @@
 {
-  "name": "waterlock-spotify-auth",
+  "name": "waterlock-spotify-auth-sonatribe",
   "version": "1.0.0",
   "description": "spotify authentication for waterlock",
   "main": "index.js",
