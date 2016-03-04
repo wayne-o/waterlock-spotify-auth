@@ -22,5 +22,19 @@
   "bugs": {
     "url": "https://github.com/wayne-o/waterlock-spotify-auth/issues"
   },
-  "homepage": "https://github.com/wayne-o/waterlock-spotify-auth#readme"
+  "homepage": "https://github.com/wayne-o/waterlock-spotify-auth#readme",
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "promise": "^7.1.1",
+    "request": "^2.69.0",
+    "restler": "^3.4.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.8",
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5",
+    "proxyquire": "^1.7.4",
+    "should": "^8.2.2"
+  }
 }

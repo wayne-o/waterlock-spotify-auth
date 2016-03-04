@@ -23,5 +23,5 @@
 	"strict":true,
 	"laxbreak":true,
   	"laxcomma":true,
-	"predef":["User", "Token", "ApiKey", "Use", "Attempt", "waterlock"]
+	"predef":["User", "Token", "ApiKey", "Use", "Attempt", "waterlock", "sails", "describe", "it"]
 }
