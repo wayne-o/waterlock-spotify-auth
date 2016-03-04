@@ -3,9 +3,18 @@ var proxyquire = require('proxyquire');
 var should = require('should');
 var mocha = require('mocha');
 //var config = require('../fixtures/waterlock.config');
+
+
+var spotifyAuth = require('../../lib/waterlock-spotify-auth');
+
+
 var AuthenticationRequest = require('../../lib/authentication-request');
 
-var spotifyAuth = require('../../')();
+global.sails = {
+	getBaseurl: function(){
+		return '';
+	}
+};
 
 
 describe('waterlock-spotify-auth', function() {
@@ -25,12 +34,14 @@ describe('waterlock-spotify-auth', function() {
 
 					var response = {
 						redirect: function(url){
-							url.should.equal('http://google.com');
+							url.should.equal('https://accounts.spotify.com/authorize?client_id=test&response_type=code&redirect_uri=http://dev.festivaltribe.co.uk:4200/login&scope=user-read-private%20user-read-email&state=some-state-of-my-choice');
 						}
 					};
 
-					var login = spotifyAuth.controllers.actions.login;
-					login(null, response);
+					var request = {};
+
+					var login = new spotifyAuth().actions.login;
+					login(request, response);
 
 					done();
 				});
