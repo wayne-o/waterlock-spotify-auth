@@ -1,0 +1,26 @@
+{
+  "name": "waterlock-spotify-auth",
+  "version": "1.0.0",
+  "description": "spotify authentication for waterlock",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wayne-o/waterlock-spotify-auth.git"
+  },
+  "keywords": [
+    "spotify",
+    "auth2",
+    "authentication",
+    "waterlock",
+    "sails"
+  ],
+  "author": "Wayne Douglas <wayne@sonatribe.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wayne-o/waterlock-spotify-auth/issues"
+  },
+  "homepage": "https://github.com/wayne-o/waterlock-spotify-auth#readme"
+}
