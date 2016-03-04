@@ -7,25 +7,21 @@ var mocha = require('mocha');
 
 var spotifyAuth = require('../../lib/waterlock-spotify-auth');
 
-
-var AuthenticationRequest = require('../../lib/authentication-request');
-
 global.sails = {
 	getBaseurl: function(){
-		return '';
+		return 'http://test.com/';
+	},
+	config:{
+		waterlock:{
+			pluralizeEndpoints: true
+		},
+		blueprints:{
+			prefix: 'test'
+		}
 	}
 };
 
-
 describe('waterlock-spotify-auth', function() {
-	describe('authentication-request', function() {
-		it('returns a configured builder', function(done) {
-			AuthenticationRequest.builder().port.should.equal(443);
-      AuthenticationRequest.builder().scheme.should.equal('https');
-      AuthenticationRequest.builder().host.should.equal('accounts.spotify.com');
-			done();
-		});
-	});
 
 	describe('controllers', function(){
 		describe('actions', function(){
@@ -34,7 +30,7 @@ describe('waterlock-spotify-auth', function() {
 
 					var response = {
 						redirect: function(url){
-							url.should.equal('https://accounts.spotify.com/authorize?client_id=test&response_type=code&redirect_uri=http://dev.festivaltribe.co.uk:4200/login&scope=user-read-private%20user-read-email&state=some-state-of-my-choice');
+							url.split('&state')[0].should.equal('https://accounts.spotify.com/authorize?client_id=test&response_type=code&redirect_uri=http://test.com/test/auths/spotify_oauth2&scope=user-read-private%20user-read-email');
 						}
 					};
 
