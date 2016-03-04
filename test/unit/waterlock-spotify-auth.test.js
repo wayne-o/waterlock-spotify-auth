@@ -1,11 +1,11 @@
 'use strict';
-// var proxyquire = require('proxyquire');
-// var should = require('should');
-// var mocha = require('mocha');
-// var config = require('../fixtures/waterlock.config');
+var proxyquire = require('proxyquire');
+var should = require('should');
+var mocha = require('mocha');
+//var config = require('../fixtures/waterlock.config');
 var AuthenticationRequest = require('../../lib/authentication-request');
 
-// var spotifyAuth = require('../../')();
+var spotifyAuth = require('../../')();
 
 
 describe('waterlock-spotify-auth', function() {
@@ -18,23 +18,23 @@ describe('waterlock-spotify-auth', function() {
 		});
 	});
 
-	// describe('controllers', function(){
-	// 	describe('actions', function(){
-	// 		describe('login', function(){
-	// 			it('returns a redicrect with the correct URL when called', function(done) {
-	//
-	// 				var response = {
-	// 					redirect: function(url){
-	// 						url.should.equal('http://google.com');
-	// 					}
-	// 				};
-	//
-	// 				var login = spotifyAuth.controllers.actions.login;
-	// 				login(null, response);
-	//
-	// 				done();
-	// 			});
-	// 		});
-	// 	});
-	// });
+	describe('controllers', function(){
+		describe('actions', function(){
+			describe('login', function(){
+				it('returns a redicrect with the correct URL when called', function(done) {
+
+					var response = {
+						redirect: function(url){
+							url.should.equal('http://google.com');
+						}
+					};
+
+					var login = spotifyAuth.controllers.actions.login;
+					login(null, response);
+
+					done();
+				});
+			});
+		});
+	});
 });
